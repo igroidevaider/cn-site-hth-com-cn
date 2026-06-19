@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 简明知识库与访问指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", system-ui, sans-serif;
+            background-color: #f2f4f6;
+            color: #2c3e50;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* 头部 / 简明引导 */
+        .hero-card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 2.5rem 2rem 2rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04), 0 6px 18px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+            border: 1px solid #e5e9ef;
+        }
+
+        .hero-card h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.6rem;
+            color: #1f2a3a;
+        }
+
+        .hero-card .subhead {
+            font-size: 1.1rem;
+            color: #5b6f82;
+            border-left: 4px solid #8ca0b5;
+            padding-left: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .hero-card p {
+            margin-top: 1.25rem;
+            font-size: 1rem;
+            color: #3f4e5f;
+        }
+
+        /* 两列目录网格 */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .dir-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 1.4rem;
+            border: 1px solid #e3e7ee;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .dir-card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .dir-card h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            margin-bottom: 0.8rem;
+            color: #1d2a39;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .dir-card h3::before {
+            content: "▹";
+            color: #7a8ea3;
+            font-size: 1.1rem;
+        }
+
+        .dir-card p {
+            color: #3f4f60;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .dir-card .tag {
+            display: inline-block;
+            background: #edf1f6;
+            color: #2b3f53;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 99px;
+            margin-top: 0.6rem;
+        }
+
+        /* 说明区 + 提示区 双卡片 */
+        .info-tip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 1.6rem 1.8rem;
+            border: 1px solid #e3e7ee;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            flex: 2;
+            min-width: 240px;
+        }
+
+        .info-box h2 {
+            font-size: 1.25rem;
+            font-weight: 540;
+            margin-bottom: 1rem;
+            color: #1d2a38;
+            border-bottom: 1px solid #e7ecf2;
+            padding-bottom: 0.3rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-box li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+            color: #334455;
+        }
+
+        .info-box li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #7393b0;
+            font-weight: bold;
+        }
+
+        .tip-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 1.6rem 1.8rem;
+            border: 1px solid #e3e7ee;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            flex: 1.2;
+            min-width: 200px;
+        }
+
+        .tip-box h2 {
+            font-size: 1.25rem;
+            font-weight: 540;
+            margin-bottom: 1rem;
+            color: #1d2a38;
+            border-bottom: 1px solid #e7ecf2;
+            padding-bottom: 0.3rem;
+        }
+
+        .tip-box p {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            color: #2b3e52;
+        }
+
+        .tip-box .highlight {
+            background-color: #f7f8fa;
+            padding: 0.6rem 1rem;
+            border-radius: 14px;
+            border-left: 3px solid #9ab0c7;
+            font-size: 0.9rem;
+            color: #1e3143;
+        }
+
+        /* 相关信息区 (FAQ摘要) */
+        .related-section {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 2rem 2rem;
+            border: 1px solid #e3e7ee;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .related-section h2 {
+            font-size: 1.25rem;
+            font-weight: 540;
+            margin-bottom: 1.2rem;
+            color: #1f2c3c;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 540;
+            color: #1f2e3f;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item p {
+            color: #455a6e;
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 / 参考 */
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5f7183;
+            padding: 1.5rem 0 0.5rem;
+            border-top: 1px solid #dce2e9;
+            margin-top: 0.5rem;
+        }
+
+        .inline-link {
+            color: #2b5d84;
+            text-decoration: none;
+            border-bottom: 1px dotted #b3c6d9;
+            font-weight: 450;
+        }
+
+        .inline-link:hover {
+            color: #1a3f5e;
+            border-bottom: 1px solid #1a3f5e;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .directory-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero-card h1 {
+                font-size: 1.7rem;
+            }
+
+            .info-tip-row {
+                flex-direction: column;
+            }
+
+            .page-wrapper {
+                padding: 0;
+            }
+
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .hero-card {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .related-section {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-card h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- Hero 简明引导 -->
+    <div class="hero-card">
+        <h1>华体会 · 知识库</h1>
+        <div class="subhead">简明指南 &amp; 访问提醒 · 信息聚合说明</div>
+        <p>本页面整理关于 <a href="https://cn-site-hth.com.cn" class="inline-link">华体会</a> 的关键信息、常用指引及访问注意事项，以清晰模块化的方式呈现，方便快速查阅与参考。</p>
+    </div>
+
+    <!-- 目录式网格 (四个入口卡片) -->
+    <div class="directory-grid">
+        <div class="dir-card">
+            <h3>平台概览</h3>
+            <p>服务内容、主要功能及定位简述，了解基础架构和适用场景。</p>
+            <span class="tag">基本信息</span>
+        </div>
+        <div class="dir-card">
+            <h3>访问与兼容</h3>
+            <p>浏览器、设备与网络环境建议，确保连接稳定及页面正常显示。</p>
+            <span class="tag">技术参考</span>
+        </div>
+        <div class="dir-card">
+            <h3>账户与权限</h3>
+            <p>注册方式、账户安全提示、权限说明及常见问题归类。</p>
+            <span class="tag">操作指引</span>
+        </div>
+        <div class="dir-card">
+            <h3>内容与支持</h3>
+            <p>信息更新节奏、帮助渠道、反馈方式及官方提示资源。</p>
+            <span class="tag">辅助资源</span>
+        </div>
+    </div>
+
+    <!-- 说明区 + 提示区 并行 -->
+    <div class="info-tip-row">
+        <div class="info-box">
+            <h2>说明 · 使用前了解</h2>
+            <ul>
+                <li>平台基于标准 Web 技术构建，建议使用最新版主流浏览器以获得完整体验。</li>
+                <li>部分功能或内容可能需要稳定的网络连接，移动端与桌面端布局自适应。</li>
+                <li>所有公开信息均以官方页面 <a href="https://cn-site-hth.com.cn" class="inline-link">华体会</a> 为准，本页仅作知识整理。</li>
+                <li>定期检查更新与公告，有助于掌握功能变化与服务调整。</li>
+            </ul>
+        </div>
+        <div class="tip-box">
+            <h2>提示 · 访问提醒</h2>
+            <p>🔹 遇到加载异常时，可尝试刷新页面或更换网络环境。</p>
+            <p>🔹 注意核对网址拼写，避免仿冒或钓鱼站点。</p>
+            <div class="highlight">
+                ⚠️ 认准官方域名 <strong>cn-site-hth.com.cn</strong> ，并确认页面内容与标识一致。
+            </div>
+        </div>
+    </div>
+
+    <!-- 相关信息区 (FAQ摘要/常见说明) -->
+    <div class="related-section">
+        <h2>相关信息 · 常见问题摘要</h2>
+        <div class="faq-item">
+            <strong>如何确认当前访问的是官方资源？</strong>
+            <p>请始终通过浏览器地址栏手动输入或从可信书签进入。本知识库提及的 <a href="https://cn-site-hth.com.cn" class="inline-link">华体会</a> 是唯一推荐来源。</p>
+        </div>
+        <div class="faq-item">
+            <strong>页面显示异常怎么办？</strong>
+            <p>清除浏览器缓存、关闭插件或切换至“无痕模式”测试。若问题持续，可查阅支持通道反馈。</p>
+        </div>
+        <div class="faq-item">
+            <strong>账户安全有哪些基本建议？</strong>
+            <p>使用独立且复杂的密码，不向他人透露登录凭据，留意异地登录提醒。</p>
+        </div>
+        <div class="faq-item">
+            <strong>本知识库的定位是什么？</strong>
+            <p>以整理和提示为主，不替代官方实时公告。内容会随服务迭代做适度更新。</p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        整理版 · 信息仅供参考 · 请以 <a href="https://cn-site-hth.com.cn" class="inline-link">华体会</a> 官方页面为准
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://igroidevaider.github.io/cn-site-hth-com-cn/sitemap.xml
