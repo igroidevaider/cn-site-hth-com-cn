@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷竞技 · 稳定之选</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #fdf3e8 0%, #fae3d4 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      line-height: 1.7;
+      color: #322b26;
+    }
+
+    .card {
+      max-width: 780px;
+      width: 100%;
+      background: #fffcf9;
+      border-radius: 32px;
+      padding: 3rem 2.8rem;
+      box-shadow: 0 16px 48px rgba(160, 100, 60, 0.12), 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.2s ease;
+    }
+
+    /* 暖白卡片内敛质感 */
+    .card:hover {
+      box-shadow: 0 20px 56px rgba(140, 80, 40, 0.14);
+    }
+
+    .article-title {
+      font-size: 2rem;
+      font-weight: 550;
+      letter-spacing: 0.01em;
+      color: #4c372c;
+      border-left: 5px solid #d9b08c;
+      padding-left: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #7f6658;
+      margin-bottom: 2.2rem;
+      padding-left: 0.25rem;
+      font-weight: 380;
+      border-bottom: 1px dashed #ebd6c8;
+      padding-bottom: 0.8rem;
+    }
+
+    .body-text {
+      margin-bottom: 1.6rem;
+      text-align: justify;
+      font-size: 1rem;
+      color: #3d332e;
+    }
+
+    .body-text strong {
+      font-weight: 520;
+      color: #684e3e;
+    }
+
+    .quote-note {
+      background: #f8f0ea;
+      border-left: 4px solid #d9b08c;
+      padding: 1rem 1.5rem;
+      margin: 2rem 0 1.8rem 0;
+      border-radius: 0 16px 16px 0;
+      font-style: normal;
+      color: #5a4a40;
+      font-size: 0.98rem;
+      box-shadow: inset 0 0 0 1px rgba(200, 160, 130, 0.15);
+    }
+
+    .quote-note::before {
+      content: "💡 一点观察 ";
+      font-weight: 450;
+      color: #966b52;
+      display: block;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.3px;
+    }
+
+    .action-line {
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e9d6ca;
+      font-size: 1rem;
+      color: #4f3e34;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .action-link {
+      display: inline-block;
+      background: #f1e3d9;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #4c372c;
+      font-weight: 480;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.1s;
+      border: 1px solid #e3cebe;
+      line-height: 1.5;
+    }
+
+    .action-link:hover {
+      background: #e6d2c2;
+      border-color: #c8aa94;
+      transform: scale(1.01);
+    }
+
+    .action-link:active {
+      background: #dac0ad;
+    }
+
+    .faq-summary {
+      margin-top: 2.6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.8rem;
+      background: #fcf7f3;
+      padding: 1.6rem 1.8rem;
+      border-radius: 24px;
+    }
+
+    .faq-item {
+      font-size: 0.92rem;
+      color: #4e3e34;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 530;
+      color: #684e3e;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-item span {
+      color: #6e5b4e;
+    }
+
+    .footer-note {
+      margin-top: 2.4rem;
+      font-size: 0.85rem;
+      color: #927b6b;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .card {
+        padding: 2rem 1.4rem;
+        border-radius: 28px;
+      }
+      .article-title {
+        font-size: 1.6rem;
+        padding-left: 0.7rem;
+      }
+      .subhead {
+        font-size: 0.95rem;
+      }
+      .faq-summary {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+        padding: 1.2rem;
+      }
+      .action-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="article-title">一个稳定的入口，胜过一百次寻找</h1>
+    <div class="subhead">关于雷竞技 · 偏安一隅的说明页</div>
+
+    <p class="body-text">
+      我常常觉得，在信息密集的网络上，一个干净、克制的入口本身就是一种善意。不需要闪烁的弹窗，不需要催促式的标语——你走进来，看一眼，然后决定是否继续。今天想聊聊的，是<strong>雷竞技</strong>这个站点。它没有铺天盖地的宣发，但如果你恰好需要一处稳定的落脚点，它值得被放在书签栏的某个角落。
+    </p>
+
+    <p class="body-text">
+      第一次打开 <a href="https://leisport.com" class="action-link" style="background: none; border: none; padding: 0; color: #966b52; text-decoration: underline; text-underline-offset: 3px; display: inline; font-size: inherit; font-weight: 500;">雷竞技</a> 的时候，页面加载的速度让我有些意外——没有多余的跳转，也没有突然弹出的遮罩。那种感觉，像是推开一家临街小店的门，门铃响了一声，里面光线柔和，一切都在它该在的位置。对于只想快速确认信息的人来说，这种体验本身就传递着一种态度：稳定比花哨更重要。
+    </p>
+
+    <p class="body-text">
+      后来我慢慢注意到，这个站点在结构上保持了一种很低的“噪声”。导航清晰，反馈直接，不会让用户陷入“我刚刚点了什么”的困惑当中。作为一个经常需要测试不同平台入口的写作者，我越来越觉得，这种克制其实很考验背后的设计思路。它不试图用视觉轰炸留住你，而是用确定性和流畅感来建立信任。
+    </p>
+
+    <!-- 引用式提示 -->
+    <div class="quote-note">
+      如果你也厌倦了那些每次打开都要重新适应布局的站点，或许可以试试把这个页面当作一个安静的起点。它不承诺什么奇迹，但它几乎不会让你在寻找某个按钮时感到烦躁。
+    </div>
+
+    <p class="body-text">
+      当然，一个入口页面能承载的内容终究有限。真正重要的，是它背后的服务是否稳定、响应是否及时。从我个人断断续续的使用体验来看，<strong>雷竞技</strong> 在访问连贯性上做得相当扎实——无论是白天还是深夜，加载耗时浮动很小，几乎没有遇到过“正在维护”的突兀提示。对于依赖线上环境的人来说，这种隐形但可靠的节奏，比任何宣传语都更有说服力。
+    </p>
+
+    <!-- 访问句 + 自然嵌入链接 -->
+    <div class="action-line">
+      <span>如果你想自己感受一下，可以直接前往</span>
+      <a href="https://leisport.com" class="action-link">雷竞技</a>
+      <span>—— 不需要注册，也不需要等待。</span>
+    </div>
+
+    <!-- FAQ 摘要风格小模块，更偏叙述而非列表 -->
+    <div class="faq-summary">
+      <div class="faq-item">
+        <strong>▸ 适合什么样的人？</strong>
+        <span>喜欢简洁界面、看重响应速度、不希望被冗余信息干扰的浏览者。</span>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 与传统入口的区别？</strong>
+        <span>没有强制弹窗，没有倒计时浮层，所有操作都在一两步之内完成。</span>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 值得收藏吗？</strong>
+        <span>如果你偏好低干扰、高一致性的线上环境，它会是一个称职的起点。</span>
+      </div>
+      <div class="faq-item">
+        <strong>▸ 移动端体验如何？</strong>
+        <span>同样清爽，排版自适应，不会出现按钮叠在一起的窘境。</span>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      一份安静的说明 · 写于某个不必着急的下午
+    </div>
+  </div>
+  <!-- 创作种子仅用于变化，不直接呈现 -->
+</body>
+</html>
